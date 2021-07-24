@@ -447,7 +447,7 @@ console.log(string);
 
 ---
 
-###### 11. Testing your 'this' knowledge in JavaScript: What is the output of the following code?.
+###### 11. Testing your 'this' knowledge in JavaScript: What is the output of the following code?.(eg. company name)
 
 ```javascript
 var length = 10;
