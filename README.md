@@ -481,10 +481,9 @@ method is bound to Object obj, and obj.method is called with parameters fn and 1
 
 When fn() is called inside method, which was passed the function as a parameter at the global level, this.length will have access to var length = 10 (declared globally) not length = 5 as defined in Object obj.
 
-Now, we know that we can access any number of arguments in a JavaScript function using the arguments[] array.
+Now, we know that we can access any number of arguments in a JavaScript function using the arguments`[]` array.
 
-Hence arguments[0]() is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, and logging the length of arguments[] will return 2.
-
+Hence arguments`[0]()` is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, and logging the length of arguments[] will return 2.
 
 </p>
 
