@@ -1,3 +1,11 @@
+You can type HTML Tag: 
+For Heading 1 => <h1>Heading 1</h1>
+For Heading 6 => <h6>Heading 1</h6>
+<p></p>
+<strong></strong> .... 
+
+or you can use this style
+
 # Heading 1
 ###### Heading 6
 
