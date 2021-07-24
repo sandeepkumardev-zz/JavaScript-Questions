@@ -12,14 +12,15 @@ console.log(length);
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-if(outputCode){
-    `add this tag`
-}else{
-    `remove this tag`
+if (outputCode) {
+  `add this tag`;
+} else {
+  `remove this tag`;
 }
 ```
+
 <p>
-Explanation .....
+Explanaion .....
 </p>
 
 </details>

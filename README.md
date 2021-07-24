@@ -18,6 +18,7 @@ Please adhere to this project's `code of conduct`.
 
 - [@sandeepkumardev](https://github.com/sandeepkumardev)
 - [@vickydonor-99](https://github.com/vickydonor-99)
+- [AurobindoGupta](https://github.com/AurobindoGupta)
 
 </details>
 
@@ -520,8 +521,6 @@ Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of 
 </details>
 
 ---
-
-<!-- rajat's -->
 
 ###### 13. Type your question here.
 
