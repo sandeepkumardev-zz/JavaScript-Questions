@@ -19,7 +19,7 @@ _Italics_
 
 ---
 
-**Strong/Blod**
+**Strong/Bold**
 
 ---
 
