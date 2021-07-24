@@ -6,6 +6,22 @@ From basic to advanced: test how well you know JavaScript, refresh your knowledg
 
 </div>
 
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+<details><summary><b>Contributors List</b></summary>
+
+- [@sandeepkumardev](https://github.com/sandeepkumardev)
+- [@vickydonor-99](https://github.com/vickydonor-99)
+
+</details>
+
 ---
 
 ###### 1. Square star pattern.
@@ -447,7 +463,7 @@ console.log(string);
 
 ---
 
-###### 11. Testing your 'this' knowledge in JavaScript: What is the output of the following code?.(eg. company name)
+###### 11. Testing your 'this' knowledge in JavaScript: What is the output of the following code?.
 
 ```javascript
 var length = 10;
@@ -473,7 +489,7 @@ obj.method(fn, 1);
 2
 ```
 <p>
-  Why isn’t it 10 and 5?
+Why isn’t it 10 and 5?
 
 In the first place, as fn is passed as a parameter to the function method, the scope (this) of the function fn is window. var length = 10; is declared at the window level. It also can be accessed as window.length or length or this.length (when this === window.)
 
@@ -481,9 +497,9 @@ method is bound to Object obj, and obj.method is called with parameters fn and 1
 
 When fn() is called inside method, which was passed the function as a parameter at the global level, this.length will have access to var length = 10 (declared globally) not length = 5 as defined in Object obj.
 
-Now, we know that we can access any number of arguments in a JavaScript function using the arguments`[]` array.
+Now, we know that we can access any number of arguments in a JavaScript function using the arguments[] array.
 
-Hence arguments`[0]()` is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, and logging the length of arguments[] will return 2.
+Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, and logging the length of arguments[] will return 2.
 
 </p>
 
