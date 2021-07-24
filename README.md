@@ -6,7 +6,6 @@ From basic to advanced: test how well you know JavaScript, refresh your knowledg
 
 </div>
 
-
 ## Contributing
 
 Contributions are always welcome!
@@ -485,9 +484,10 @@ obj.method(fn, 1);
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-10
-2
+10;
+2;
 ```
+
 <p>
 Why isn’t it 10 and 5?
 
@@ -506,11 +506,10 @@ Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of 
 </details>
 
 ---
-###### 12.  Explain the lifecycle methods of components?
+
+###### 12. Explain the lifecycle methods of components?
 
 <details><summary><b>Answer</b></summary>
-
-
 
 - **getInitialState()**: This is executed before the creation of the component.
 - **componentDidMount()**: Is executed when the component gets rendered and placed on the DOM.
@@ -518,7 +517,36 @@ Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of 
 - **componentDidUpdate()**: Is invoked immediately after rendering takes place.
 - **componentWillUnmount()**: Is invoked immediately before a component is destroyed and unmounted permanently.
 
+</details>
 
+---
+
+<!-- rajat's -->
+
+###### 13. Type your question here.
+
+```javascript
+If your question contains code, write it in this block. 👇
+
+var length = 10;
+console.log(length);
+```
+
+<p>Question helper text.</p>
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+if (outputCode) {
+  `add this tag`;
+} else {
+  `remove this tag`;
+}
+```
+
+<p>
+explanation
+</p>
 
 </details>
 
