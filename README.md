@@ -551,3 +551,31 @@ explanation
 </details>
 
 ---
+###### 14. Type your question here.
+
+```javascript
+If your question contains code, write it in this block. 👇
+
+var name = piyush;
+console.log(name);
+```
+
+<p>Question helper text.</p>
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+if (outputCode) {
+  `add this tag`;
+} else {
+  `remove this tag`;
+}
+```
+
+<p>
+explanation
+</p>
+
+</details>
+
+---
