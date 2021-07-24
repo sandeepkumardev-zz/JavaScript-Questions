@@ -521,3 +521,60 @@ Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of 
 </details>
 
 ---
+
+###### 13. Type your question here.
+
+```javascript
+If your question contains code, write it in this block. 👇
+
+var length = 10;
+console.log(length);
+```
+
+<p>Question helper text.</p>
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+if (outputCode) {
+  `add this tag`;
+} else {
+  `remove this tag`;
+}
+```
+
+<p>
+explanation
+</p>
+
+</details>
+
+---
+###### 14. Type your question here.
+
+```javascript
+If your question contains code, write it in this block. 👇
+
+var name = piyush;
+console.log(name);
+```
+
+<p>Question helper text.</p>
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+if (outputCode) {
+  `add this tag`;
+} else {
+  `remove this tag`;
+}
+```
+
+<p>
+explanation
+</p>
+
+</details>
+
+---
