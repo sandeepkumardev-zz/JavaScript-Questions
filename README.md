@@ -24,6 +24,8 @@ Please adhere to this project's `code of conduct`.
 
 ---
 
+<h3 align="center"> Printing Patterns </h3>
+
 ###### 1. Square star pattern.
 
 ```javascript
@@ -462,13 +464,236 @@ console.log(string);
 </details>
 
 ---
+  
+<h3 align="center"> Questions on "This" keyword </h3>
+  
+###### 1. What logs to console in the following code snippet?
+  
+```javascript
+const object = {
+  message: 'Hello, World!',
 
-###### 11. Testing your 'this' knowledge in JavaScript: What is the output of the following code?.
+  getMessage() {
+    const message = 'Hello, Earth!';
+    return this.message;
+  }
+};
 
+console.log(object.getMessage()); // What is logged?
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+    'Hello, World!' is logged to console. 
+    
+    -object.getMessage() is a method invocation, that’s why 'this' inside the method equals 'object'.
+
+    -There’s also a variable declaration  const message = 'Hello, Earth!'  inside the method. 
+    
+    -The variable doesn’t influence anyhow the value of 'this.message'.
+  </p>
+</details>  
+  
+---  
+  
+###### 2. What logs to console in the following code snippet?
+  
+```javascript
+function Pet(name) {
+  this.name = name;
+
+  this.getName = () => this.name;
+}
+
+const cat = new Pet('Fluffy');
+
+console.log(cat.getName()); // What is logged?
+
+const { getName } = cat;
+console.log(getName());     // What is logged?
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+  'Fluffy' and 'Fluffy' are logged to console.  
+  
+  ```
+  -When a function is invoked as a constructor new Pet('Fluffy'), this inside the constructor function equals the constructed 
+  
+   object.
+
+  -this.name = name expression inside Pet constructor creates name property on the constructed object.
+
+  -this.getName = () => this.name creates a method getName on the constructed object. 
+    
+  -And since the arrow function is used, this inside the arrow function equals to this of the outer scope — the constructor 
+    
+   function Pet.
+
+  -Invoking cat.getName(), as well as getName(), returns the expression this.name that evaluates to 'Fluffy'.
+  ```
+  </p>
+</details>
+
+---  
+  
+###### 3. What logs to console in the following code snippet?
+  
+```javascript
+const object = {
+  message: 'Hello, World!',
+
+  logMessage() {
+    console.log(this.message); // What is logged?
+  }
+};
+
+setTimeout(object.logMessage, 1000);
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+  After a delay of 1 second, undefined is logged to console.
+  
+  ```
+  -While setTimeout() function uses the object.logMessage as a callback, still, it inovkes object.logMessage as a regular 
+    
+   function, rather than a method.
+
+  -And during a regular function invocation this equals the global object, which is window in the case of the browser 
+    
+   environment.
+
+  -That’s why console.log(this.message) inside logMessage method logs window.message, which is undefined.
+  ```
+  </p>
+</details>
+ 
+---
+  
+###### 4. How can you call logMessage function so that it logs "Hello, World!"?
+  
+```javascript
+const object = {
+  message: 'Hello, World!'
+};
+
+function logMessage() {
+  console.log(this.message); // "Hello, World!"
+}
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+  There are at least 3 ways how to call logMessage() as a method on the object. Any of them is considered a correct answer:
+  
+ ```javascript
+  const object = {
+  message: 'Hello, World!'
+};
+
+function logMessage() {
+  console.log(this.message); // logs 'Hello, World!'
+}
+
+// Using func.call() method
+logMessage.call(object);
+
+// Using func.apply() method
+logMessage.apply(object);
+
+// Creating a bound function
+const boundLogMessage = logMessage.bind(object);
+boundLogMessage();
+```
+  </p>
+</details>
+ 
+---  
+  
+###### 5. What logs to console in the following code snippet?
+  
+```javascript
+const object = {
+  who: 'World',
+
+  greet() {
+    return `Hello, ${this.who}!`;
+  },
+
+  farewell: () => {
+    return `Goodbye, ${this.who}!`;
+  }
+};
+
+console.log(object.greet());    // What is logged?
+console.log(object.farewell()); // What is logged?
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+  'Hello, World!' and 'Goodbye, undefined!' are logged to console.
+  
+  ```
+  -When calling object.greet(), inside the method greet() this value equals object because greet is a regular function. 
+    
+  -Thus object.greet() returns 'Hello, World!'.
+
+  -But farewell() is an arrow function, so this value inside of an arrow function always equals this of the outer scope.
+
+  -The outer scope of farewell() is the global scope, where this is the global object.
+   
+  -Thus object.farewell() actually returns 'Goodbye, ${window.who}!', which evaluates to 'Goodbye, undefined!'.
+  ```
+  </p>
+</details>
+ 
+---
+  
+###### 6. What logs to console in the following code snippet?
+  
+```javascript
+var length = 4;
+function callback() {
+  console.log(this.length); // What is logged?
+}
+
+const object = {
+  length: 5,
+  method(callback) {
+    callback();
+  }
+};
+
+object.method(callback, 1, 2);
+```
+
+<details><summary><b>Answer</b></summary>
+  <p>
+  4 is logged to console. 
+  
+  ```  
+  -callback() is called using regular function invocation inside method(). Since this value during a regular function 
+    
+   invocation equals the global object, this.length is evaluated as window.length inside callback() function.
+
+  -The first statement var length = 4, being in the outermost scope, creates a property length on the global object: 
+    
+   window.length becomes 4.
+
+  -Finally, inside the callback() function this.length evaluates as window.length — 4 being logged to console.
+  ```
+  </p>
+</details>
+ 
+---
+
+###### 7. What logs to console in the following code snippet?
+  
 ```javascript
 var length = 10;
 function fn() {
-  console.log(this.length);
+  console.log(this.length); // What is logged?
 }
 
 var obj = {
@@ -483,32 +708,88 @@ obj.method(fn, 1);
 ```
 
 <details><summary><b>Answer</b></summary>
+  <p>
+  10 and 2 are logged to console.
+  
+  ```  
+  Why isn’t it 10 and 5?
 
+  -In the first place, as fn is passed as a parameter to the function method, the scope (this) of the function fn is window. 
+    
+   var length = 10; is declared at the window level. It also can be accessed as window.length or length or this.length 
+    
+   (when this === window.)
+
+  -method is bound to Object obj, and obj.method is called with parameters fn and 1. Though method is accepting only one 
+    
+   parameter, while invoking it has passed two parameters; the first is a function callback and other is just a number.
+
+  -When fn() is called inside method, which was passed the function as a parameter at the global level, this.length will have 
+    
+   access to var length = 10 (declared globally) not length = 5 as defined in Object obj.
+
+  -Now, we know that we can access any number of arguments in a JavaScript function using the arguments[] array.
+
+  -Hence arguments[0]() is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, 
+    
+   and logging the length of arguments[] will return 2.
+  ```
+  </p>
+</details>
+ 
+---
+  
+###### 8. What logs to console in the following code snippet?
+  
 ```javascript
-10;
-2;
+var length = 4;
+function callback() {
+  console.log(this.length); // What is logged?
+}
+
+const object = {
+  length: 5,
+  method() {
+    arguments[0]();
+  }
+};
+
+object.method(callback, 1, 2);
 ```
 
-<p>
-Why isn’t it 10 and 5?
-
-In the first place, as fn is passed as a parameter to the function method, the scope (this) of the function fn is window. var length = 10; is declared at the window level. It also can be accessed as window.length or length or this.length (when this === window.)
-
-method is bound to Object obj, and obj.method is called with parameters fn and 1. Though method is accepting only one parameter, while invoking it has passed two parameters; the first is a function callback and other is just a number.
-
-When fn() is called inside method, which was passed the function as a parameter at the global level, this.length will have access to var length = 10 (declared globally) not length = 5 as defined in Object obj.
-
-Now, we know that we can access any number of arguments in a JavaScript function using the arguments[] array.
-
-Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of this function becomes the arguments array, and logging the length of arguments[] will return 2.
-
-</p>
-
+<details><summary><b>Answer</b></summary>
+  <p>
+  3 is logged to console.
+  
+  ```  
+  -obj.method(callback, 1, 2) is invoked with 3 arguments: callback, 1 and 2. As result the arguments special variable 
+    
+   inside method() is an array-like object of the following structure:
+    
+  {
+    0: callback,
+    1: 1, 
+    2: 2, 
+    length: 3 
+  }
+  
+  -Because arguments[0]() is a method invocation of callback on arguments object, this inside the callback equals arguments. 
+    
+   As result this.length inside callback() is same as arguments.length — which is 3.
+  ```
+  </p>
 </details>
-
+ 
 ---
-
-###### 12. Explain the lifecycle methods of components?
+  
+<div align="center">
+  <img height="60" src="https://img.icons8.com/ultraviolet/80/000000/react--v2.png"/>
+  <h1>React Questions</h1>
+  
+  From basic to advanced: test how well you know React, refresh your knowledge a bit, or prepare for your coding interview! 💪 🚀
+</div>
+  
+###### 1. Explain the lifecycle methods of components?
 
 <details><summary><b>Answer</b></summary>
 
@@ -520,61 +801,5 @@ Hence `arguments[0]()` is nothing but calling fn(). Inside fn now, the scope of 
 
 </details>
 
----
 
-###### 13. Type your question here.
-
-```javascript
-If your question contains code, write it in this block. 👇
-
-var length = 10;
-console.log(length);
-```
-
-<p>Question helper text.</p>
-
-<details><summary><b>Answer</b></summary>
-
-```javascript
-if (outputCode) {
-  `add this tag`;
-} else {
-  `remove this tag`;
-}
-```
-
-<p>
-explanation
-</p>
-
-</details>
-
----
-###### 14. Type your question here.
-
-```javascript
-If your question contains code, write it in this block. 👇
-
-var name = piyush;
-console.log(name);
-```
-
-<p>Question helper text.</p>
-
-<details><summary><b>Answer</b></summary>
-
-```javascript
-if (outputCode) {
-  `add this tag`;
-} else {
-  `remove this tag`;
-}
-```
-
-<p>
-explanation
-</p>
-
-</details>
-
----
+  
