@@ -18,7 +18,7 @@ Please adhere to this project's `code of conduct`.
 
 - [@sandeepkumardev](https://github.com/sandeepkumardev)
 - [@vickydonor-99](https://github.com/vickydonor-99)
-- [AurobindoGupta](https://github.com/AurobindoGupta)
+- [@AurobindoGupta](https://github.com/AurobindoGupta)
 
 </details>
 
