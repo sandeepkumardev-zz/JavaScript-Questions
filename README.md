@@ -26,7 +26,10 @@ Please adhere to this project's `code of conduct`.
 
 Choose any route: 
 
-<div style="display: flex; justify-content: space-evenly">
-<a href="https://github.com/sandeepkumardev/JavaScript-Questions/blob/master/Javascript.md" style="text-decoration: none"><div style="height: 35px; width: 100%; background-color: #FFD600; margin: 10px; border-radius: 5px; font-size: 20px;  font-weight: bold; text-align: center; cursor: pointer;"> Javascript</div></a>
-<a href="https://github.com/sandeepkumardev/JavaScript-Questions/blob/master/React.md" style="text-decoration: none"><div style="height: 35px; width: 100%; background-color: #5392CF; color: #fff; margin: 10px; border-radius: 5px; font-size: 20px;  font-weight: bold; text-align: center; cursor: pointer;">React Js</div></a>
-</div>
+<a href="https://github.com/sandeepkumardev/JavaScript-Questions/blob/master/Javascript.md" style="text-decoration: none">
+<div style="height: 35px; width: 100%; background-color: #FFD600; margin: 10px; border-radius: 5px; font-size: 20px;  font-weight: bold; text-align: center; cursor: pointer;">Javascript</div>
+</a>
+
+<a href="https://github.com/sandeepkumardev/JavaScript-Questions/blob/master/React.md" style="text-decoration: none">
+<div style="height: 35px; width: 100%; background-color: #5392CF; color: #fff; margin: 10px; border-radius: 5px; font-size: 20px;  font-weight: bold; text-align: center; cursor: pointer;">React Js</div>
+</a>
